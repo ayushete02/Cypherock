@@ -13,7 +13,7 @@ async function createWallet(walletName) {
       `https://api.blockcypher.com/v1/btc/test3/wallets?token=${process.env.API_KEY}`,
       data
     );
-
+   
     console.log("Wallet created successfully:");
     console.log(response.data);
   } catch (error) {

@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require("axios");
 
 async function getTransactions(walletAddress) {
   try {
@@ -7,7 +7,7 @@ async function getTransactions(walletAddress) {
     const transactions = response.data.txs;
     console.log(transactions);
   } catch (error) {
-    console.error('Error fetching transactions:', error.message);
+    console.error("Error fetching transactions:", error.message);
   }
 }
 

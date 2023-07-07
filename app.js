@@ -22,33 +22,38 @@ function askUserChoice() {
   rl.question("Enter your choice (1-6): ", async (choice) => {
     switch (choice) {
       case "1":
-        rl.question("Enter the wallet name: ", async (walletName) => {
+        var walletName = 'Wallet01';
+        // rl.question("Enter the wallet name: ", async (walletName) => {
           await createWallet(walletName);
-          rl.close();
-        });
+        //   rl.close();
+        // });
         break;
       case "2":
-        rl.question("Enter your mnemonic: ", async (mnemonic) => {
-          rl.question("Enter the wallet name: ", async (walletName) => {
+         var mnemonic = 'pony magic bright glad describe improve setup secret attract poverty response feature lecture sport text';
+        var walletName = 'Wallet02';
+        // rl.question("Enter your mnemonic: ", async (mnemonic) => {
+        //   rl.question("Enter the wallet name: ", async (walletName) => {
             await importWalletFromMnemonic(walletName, mnemonic);
-            rl.close();
-          });
-        });
+            // rl.close();
+        //   });
+        // });
         break;
       case "3":
         listWallets();
         break;
       case "4":
-        rl.question("Enter the wallet address: ", async (address) => {
+        var address = 'mktg9U8pZ4jhYV612MHUY7CB5dLUaqdvo6'
+        // rl.question("Enter the wallet address: ", async (address) => {
           await getBalance(address);
-          rl.close();
-        });
+        //   rl.close();
+        // });
         break;
       case "5":
-        rl.question("Enter the wallet address: ", async (address) => {
+        var address = '1Kr6QSydW9bFQG1mXiPNNu6WpJGmUa9i1g'
+        // rl.question("Enter the wallet address: ", async (address) => {
           await getTransactions(address);
-          rl.close();
-        });
+        //   rl.close();
+        // });
         break;
       case "6":
           await generateBitcoinAddress();

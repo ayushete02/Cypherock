@@ -1,9 +1,9 @@
-const axios = require('axios');
-const bip39 = require('bip39');
-const bitcoin = require('bitcoinjs-lib');
-require('dotenv').config();
+const axios = require("axios");
+const bip39 = require("bip39");
+const bitcoin = require("bitcoinjs-lib");
+require("dotenv").config();
 
-async function importWalletFromMnemonic(walletName,mnemonic) {
+async function importWalletFromMnemonic(walletName, mnemonic) {
   try {
     const seed = await bip39.mnemonicToSeed(mnemonic);
     const network = bitcoin.networks.testnet;
@@ -26,10 +26,9 @@ async function importWalletFromMnemonic(walletName,mnemonic) {
       walletData
     );
 
-    console.log('Wallet imported successfully:', response.data);
-
+    console.log("Wallet imported successfully:", response.data);
   } catch (error) {
-    console.error('Error importing wallet:', error.message);
+    console.error("Error importing wallet:", error.message);
   }
 }
 
